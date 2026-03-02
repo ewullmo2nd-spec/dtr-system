@@ -20,6 +20,7 @@ app.use(limiter);
 app.use("/api/auth", require("./routes/auth"));
 app.use("/api/attendance", require("./routes/attendance"));
 app.use("/api/users", require("./routes/users"));
+app.use("/api/setup", require("./routes/setup"));
 
 app.listen(process.env.PORT, () => {
     console.log("Server running on port " + process.env.PORT);
