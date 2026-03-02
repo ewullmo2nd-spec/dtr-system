@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DTR System</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-light">
+
+    <div id="login-section" class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-4">
+                <div class="card shadow">
+                    <div class="card-body">
+                        <h3 class="text-center mb-4">DTR Login</h3>
+                        <div class="mb-3">
+                            <label>Employee ID</label>
+                            <input type="text" id="empId" class="form-control" placeholder="Enter ID">
+                        </div>
+                        <div class="mb-3">
+                            <label>Password</label>
+                            <input type="password" id="password" class="form-control" placeholder="Enter Password">
+                        </div>
+                        <button onclick="login()" class="btn btn-primary w-100">Login</button>
+                        <p id="login-error" class="text-danger text-center mt-2 small"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="dashboard-section" class="container-fluid p-4 d-none">
+        <nav class="navbar navbar-light bg-white shadow-sm rounded mb-4">
+            <div class="container-fluid">
+                <span class="navbar-brand mb-0 h1">DTR System</span>
+                <div>
+                    <span id="user-name" class="me-3 fw-bold"></span>
+                    <button onclick="logout()" class="btn btn-outline-danger btn-sm">Logout</button>
+                </div>
+            </div>
+        </nav>
+
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card shadow-sm mb-4">
+                    <div class="card-body text-center">
+                        <h4 id="current-date" class="text-muted mb-4"></h4>
+                        <div id="status-badge" class="alert alert-secondary">Not Timed In</div>
+                        <div class="d-grid gap-2">
+                            <button onclick="timeIn()" class="btn btn-success btn-lg" id="btn-in">⏰ Time In</button>
+                            <button onclick="lunchOut()" class="btn btn-warning btn-lg" id="btn-lout">🍔 Lunch Out</button>
+                            <button onclick="lunchIn()" class="btn btn-info btn-lg text-white" id="btn-lin">🍟 Lunch In</button>
+                            <button onclick="timeOut()" class="btn btn-danger btn-lg" id="btn-out">🏁 Time Out</button>
+                        </div>
+                    </div>
+                </div>
+                <div id="admin-panel" class="card shadow-sm d-none">
+                    <div class="card-header bg-dark text-white">Admin Panel</div>
+                    <div class="card-body">
+                        <h5>All Employees</h5>
+                        <ul id="user-list" class="list-group small"></ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-8">
+                <div class="card shadow-sm">
+                    <div class="card-header">My Attendance History</div>
+                    <div class="card-body">
+                        <table class="table table-striped table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Time In</th>
+                                    <th>Lunch Out</th>
+                                    <th>Lunch In</th>
+                                    <th>Time Out</th>
+                                    <th>Total Hrs</th>
+                                </tr>
+                            </thead>
+                            <tbody id="history-table"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

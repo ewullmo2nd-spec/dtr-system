@@ -1,0 +1,4 @@
+body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+#dashboard-section { max-width: 1200px; margin: 0 auto; }
+#status-badge { font-size: 1.2rem; font-weight: bold; }
+.btn-lg { margin-bottom: 10px; padding: 10px; }
