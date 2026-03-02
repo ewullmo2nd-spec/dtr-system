@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:5000/api";
+const API_URL = "https://dtr-backend-tvwd.onrender.com/api";
 
 document.getElementById('current-date').innerText = new Date().toDateString();
 
